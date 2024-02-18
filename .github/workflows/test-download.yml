@@ -17,11 +17,88 @@ jobs:
           name: foo.bar
           path: "*.*"
 
-  download:
+  download1:
+    continue-on-error: true
     needs: upload
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4
         with:
           name: foo.bar
+          path: .
+
+  download2:
+    continue-on-error: true
+    needs: upload
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: foo.ba?
+          path: .
+
+  download3:
+    continue-on-error: true
+    needs: upload
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: foo.ba*
+          path: .
+
+  download4:
+    continue-on-error: true
+    needs: upload
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: foo?ba*
+          path: .
+
+  download5:
+    continue-on-error: true
+    needs: upload
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: foo*ba?
+          path: .
+
+  download6:
+    continue-on-error: true
+    needs: upload
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: foo*bar
+          path: .
+
+  download7:
+    continue-on-error: true
+    needs: upload
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+
+  download8:
+    continue-on-error: true
+    needs: upload
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: "*"
+          path: .
+
+  download9:
+    continue-on-error: true
+    needs: upload
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
           path: .
