@@ -25,7 +25,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: foo.bar
+          pattern: foo.bar
           path: .
       - run: find .
 
@@ -36,7 +36,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: foo.ba?
+          pattern: foo.ba?
           path: .
       - run: find .
 
@@ -47,7 +47,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: foo.ba*
+          pattern: foo.ba*
           path: .
       - run: find .
 
@@ -58,7 +58,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: foo?ba*
+          pattern: foo?ba*
           path: .
       - run: find .
 
@@ -69,7 +69,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: foo*ba?
+          pattern: foo*ba?
           path: .
       - run: find .
 
@@ -80,7 +80,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: foo*bar
+          pattern: foo*bar
           path: .
       - run: find .
 
@@ -99,7 +99,7 @@ jobs:
     steps:
       - uses: actions/download-artifact@v4
         with:
-          name: "*"
+          pattern: "*"
           path: .
       - run: find .
 
