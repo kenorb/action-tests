@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: find .
       - uses: actions/upload-artifact@v4
         with:
           name: foo.bar
@@ -26,6 +27,7 @@ jobs:
         with:
           name: foo.bar
           path: .
+      - run: find .
 
   download2:
     continue-on-error: true
@@ -36,6 +38,7 @@ jobs:
         with:
           name: foo.ba?
           path: .
+      - run: find .
 
   download3:
     continue-on-error: true
@@ -46,6 +49,7 @@ jobs:
         with:
           name: foo.ba*
           path: .
+      - run: find .
 
   download4:
     continue-on-error: true
@@ -56,6 +60,7 @@ jobs:
         with:
           name: foo?ba*
           path: .
+      - run: find .
 
   download5:
     continue-on-error: true
@@ -66,6 +71,7 @@ jobs:
         with:
           name: foo*ba?
           path: .
+      - run: find .
 
   download6:
     continue-on-error: true
@@ -76,6 +82,7 @@ jobs:
         with:
           name: foo*bar
           path: .
+      - run: find .
 
   download7:
     continue-on-error: true
@@ -83,6 +90,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4
+      - run: find .
 
   download8:
     continue-on-error: true
@@ -93,6 +101,7 @@ jobs:
         with:
           name: "*"
           path: .
+      - run: find .
 
   download9:
     continue-on-error: true
@@ -102,3 +111,4 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           path: .
+      - run: find .
